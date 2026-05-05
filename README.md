@@ -41,4 +41,4 @@ erDiagram
     Peminjaman ||--|| Petugas : Memiliki
 ```
 
-![alt text](SS1.png)
+![Screenshot dbdiagram.io](./SS1.png)
