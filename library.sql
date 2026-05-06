@@ -48,19 +48,19 @@ CREATE TABLE BOOKLENDING (
     FOREIGN KEY (user_id) REFERENCES USERS(id)
 )
 
-INSERT INTO USERS (username,email,age) VALUES('hanif','hanif@mail.com',29),('naufal','naufal@mail.com',19),('rivando','rivando@mail.com',26),('ilham','ilham@mail.com',26),('angga','angga@mail.com',28),('dwiki','dwiki@mail.com',24),('rafi','rafi@mail.com',29),('akmal','akmal@mail.com',25),('aqil','aqil@mail.com',22),('ali','ali@mail.com',27);
+INSERT INTO USERS (username,email,age) VALUES('hanif','misterhanif@mail.com',29),('naufal','naufal@mail.com',19),('rivando','rivando@mail.com',26),('ilham','ilham@mail.com',26),('angga','angga@mail.com',28),('dwiki','dwiki@mail.com',24),('rafi','rafi@mail.com',29),('akmal','akmal@mail.com',25),('aqil','aqil@mail.com',22),('ali','ali@mail.com',27);
 
-INSERT INTO CATEGORIES(category_name) VALUES('Romance'),('Fantasy'),('Romance'),('Science Fiction'),('Mystery'),('Crime'),('Thriller'),('Suspense'),('Historical'),('Horror'),('Adult'),('Mindset');
+INSERT INTO CATEGORIES(category_name) VALUES('Romance'),('Fantasy'),('Science Fiction'),('Mystery'),('Crime'),('Thriller'),('Suspense'),('Historical'),('Horror'),('Adult'),('Mindset');
 
 INSERT INTO BOOKSHELF(bookshelf_number) VALUES (1),(2);
 
 INSERT INTO BOOKS (book_name,author,publisher,category_id,bookshelf_id,pages) VALUES ('Think And Grow Rich','Napoleon Hill','Gramedia Pustaka Utama',12,2,320),('Gaga dan Permen Cokelat
-','Arnoldus Yansen Sabu Paji','KEMENDIKBUD',2,2,1),('NATIONAL GEOGRAPHIC
-','Utomo Priyambodo','Gridnetwork',2,3,84),('Majalah Kiko
+','Arnoldus Yansen Sabu Paji','KEMENDIKBUD',6,2,1),('NATIONAL GEOGRAPHIC
+','Utomo Priyambodo','Gridnetwork',9,3,84),('Majalah Kiko
 ','Majalah Kiko','PT. HighEnd Multimedia Indonesia',5,2,52),('Seijo No Kyusa
 ','Keigo Higashino','Gramedia Pustaka Utama',5,2,2),('The Prophet; Kisah Hikmah 25 Nabi Allah
 ','Dian Noviyanti','Gramedia Pustaka Utama',9,1,340),('The Outcast
-','Okky Madasari','Gramedia Pustaka Utama',7,1,266),('The Impossible Possible: Pembelajaran Tan Kwang Hwa merintis pabrik kertas tisue Tessa menjadi pengusaha kelas dunia
+','Okky Madasari','Gramedia Pustaka Utama',7,1,266),('The Impossible Possible
 ','Dyah Hasto Palupi','Gramedia Pustaka Utama',9,1,170)
 ,('The Immortal Heart
 ','Serdar Ozkan','Gramedia Pustaka Utama',8,1,316),('Antara Api dan Ordonansi Validasi yang Tergadai
@@ -69,4 +69,6 @@ INSERT INTO BOOKS (book_name,author,publisher,category_id,bookshelf_id,pages) VA
 
 INSERT INTO LIBRARIAN(name,address) VALUES('John','Bogor'),('Eren','Bandung')
 
-INSERT INTO BOOKLENDING(book_id,librarian_id,user_id,borrowing_at,load_expired_at) VALUES(1,1,1,2026-05-05 20:53:00,2026-05-08 20:53:00),(2,1,1,2026-05-05 20:53:00,2026-05-08 20:53:00),(5,1,1,2026-05-05 20:53:00,2026-05-08 20:53:00);
+INSERT INTO BOOKLENDING(book_id,librarian_id,user_id,borrowing_at,load_expired_at) VALUES(1,1,1,2026-05-05 20:53:00,2026-05-08 20:53:00);
+
+SELECT * FROM BOOKLENDING
