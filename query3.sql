@@ -34,3 +34,11 @@ ORDER BY Actors DESC
 
 
 
+select d.first_name, d.last_name, sq.total
+FROM(
+    SELECT d.id ,COUNT(ma.movie_id)
+    FROM movies m
+    JOIN directors  m.director_id = d.id
+    GROUP BY d.id
+) sq
+JOIN directors d ON sq.id = d.id

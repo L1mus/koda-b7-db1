@@ -72,3 +72,87 @@ INSERT INTO LIBRARIAN(name,address) VALUES('John','Bogor'),('Eren','Bandung')
 INSERT INTO BOOKLENDING(book_id,librarian_id,user_id,borrowing_at,load_expired_at) VALUES(1,1,1,2026-05-05 20:53:00,2026-05-08 20:53:00);
 
 SELECT * FROM BOOKLENDING
+
+
+create table products (
+    product_id serial not null,
+    product_name varchar(70),
+    price INT
+)
+
+insert into  products (product_name,price)
+values
+('Laptop',1000),
+('Mouse',50),
+('Keyboard',200);
+
+SELECT * FROM products
+
+
+
+select product_name as product ,price as price
+from products
+where price = (
+select MAX(price)
+from products
+)
+
+insert into  products (product_name,price)
+values
+('Console Gaming',1000);
+
+insert into  products (product_name,price)
+values
+('VGA 5060 16GB',1000);
+
+
+select AVG(price) as Rerata 
+FROM products
+
+select product_name as product ,price, rerata
+from products a , (
+select AVG(price) as Rerata
+FROM products
+) rerata
+where price > rerata
+
+create table transactions (
+    transaction_id serial not null,
+    customer_id int
+    amount int
+);
+
+alter table transactions
+ADD CONSTRAINT fk_customer_id FOREIGN KEY (customer_id) REFERENCES users(id)
+
+select * from users
+select * from transactions
+
+INSERT INTO transactions(customer_id,amount)
+VALUES
+(1,500),
+(1,300),
+(1,150);
+
+INSERT INTO transactions(customer_id,amount)
+VALUES
+(2,500),
+(2,300),
+(3,300),
+(3,100),
+(4,300),
+(4,150);
+
+
+SELECT customer_id , AVG(amount) as rerata
+FROM transactions
+GROUP BY customer_id
+
+
+
+SELECT customer_id , amount ,
+from transactions ,(
+SELECT customer_id , AVG(amount) as rerata
+FROM transactions
+GROUP BY customer_id)
+
